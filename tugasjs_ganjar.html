@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html Lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Rumus </title>
+</head>
+<body>
+	<script type="text/javascript">
+			var user= prompt("Siapa nama kamu ?", "");
+		var jam = (new Date()).getHours();
+		var ucapan =" "
+		
+
+		if(jam > 3 && jam < 12) ucapan= "Selamat pagi";
+		if(jam > 11 && jam < 18) ucapan = "Selamat Siang";
+		if(jam > 17 && jam < 24) ucapan = "Selamat malam";
+		if(jam > 23 && jam < 4) ucapan = "Selamat menjelang pagi";
+
+	
+	</script>
+	<center>	<h1 style="background-color: red"> Selamat datang di Kalkulator ganjar<h1></center><br>
+	<h1> Rumus Bola</h1>
+	
+	<p> Halo, <script>document.write(ucapan+" "+ user);</script></p>
+	 
+	<input type="number" placeholder="Masukan Nilai jari-jari bola " id="jari">
+	<input type="button" onclick="bola()" value="hitung volume bola ">
+	Hasil : <span id="hasil"></span> 
+	<br>
+	<br>
+	<input type="number" placeholder="Masukan Nilai jari-jari bola " id="jaribola">
+	<input type="button" onclick="bola()" value="hitung luas bola ">
+	Hasil : <span id="hasilbola"></span>  
+
+	<h1> Rumus Kerucut</h1>
+
+	<input type="number" placeholder="Masukan Nilai jari-jari alas kerucut" id="j">
+	<input type="number" placeholder="Masukan Nilai Tinggi Kerucut" id="t">
+	<button onclick="kerucut()">hitung volume kerucut </button>
+	Hasil : <span id="h"></span><br>
+
+		<h1> Rumus Silinder</h1>
+
+	<input type="number" placeholder="Masukan Nilai jari-jari bola " id="jj">
+	<input type="number" placeholder="Masukan Nilai Tinggi Kerucut" id="tt">
+	<button onclick="tabung()">hitung luas permukaan tabung </button>
+	Hasil : <span id="hasils"></span>  
+	<br>
+	<br>
+
+
+
+	<input type="number" placeholder="Masukan Nilai jari jari alas  tabung" id="jjj">
+	<input type="number" placeholder="Masukan Nilai Tinggi tabung" id="ttt">
+	<button onclick="tabung()">hitung volume tabung </button>
+	Hasil : <span id="hasiltabung"></span>
+
+
+
+	
+
+	<script type="text/javascript">
+		var silinder=document.getElementById('hasils');
+		var hasilsilinder=document.getElementById('hasiltabung');	
+		function tabung() {
+			var jarijariasli=jj.value;
+				tinggiasli=tt.value;
+			silinder.innerHTML=2*3.14*(parseFloat(jarijariasli)+parseFloat(tinggiasli));
+
+			var jariaslitabung=jjj.value;
+				tinggiaslitabung=ttt.value;
+			hasilsilinder.innerHTML=3.14*Math.pow(jariaslitabung, 2)*tinggiaslitabung;
+			 
+			
+		}
+
+		
+
+		var hasilpasti=document.getElementById('hasil');
+		var hasilpastibola=document.getElementById('hasilbola');	
+		function bola() {
+			var jariasli=jari.value;
+			hasilpasti.innerHTML=4*3.14*Math.pow(jariasli, 2);
+			
+			var jariaslibola=jari.value;
+			hasilpastibola.innerHTML=(4*3.14*Math.pow(jariaslibola, 2))/3;
+			 
+			
+		}
+
+		
+		var hs=document.getElementById('h');
+		var hsk=document.getElementById('h');
+		function kerucut() {
+			var js=j.value;
+			var	ts=t.value;
+			hs.innerHTML=3.14*Math.pow(js, 2)*ts;
+		}
+
+
+	
+		
+	</script>
+	
+	
+
+
+
+	
+</body>
+</html>
